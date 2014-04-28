@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var fs        = require('fs'),
+    path      = require('path'),
+    argv      = require('minimist')(process.argv.slice(2), { string: ['o', 'output'] }),
+    expressiv = require('../lib/expressiv');
+
+function cli() {
+    if (!argv._.length) {
+        return console.log("No file specified");
+    }
+
+    if (argv._.length > 1 && (argv.o || argv.output)) {
+        return console.log("Can't specify an output file for multiple input files");
+    }
+
+    argv._.forEach(function(file){
+        var fexts  = ['.expressiv', '.xpv', '.x'],
+            input  = file,
+            output = argv.o || argv.output || file.replace(/\.[^.]+$/, '') + '.html',
+            exists = true,
+            sttime, source;
+
+        while (!(exists = fs.existsSync(input)) && fexts.length) {
+            input = file + fexts.shift();
+        }
+
+        if (!exists) {
+            return console.log("File '%s' not found", file);
+        }
+
+        source = fs.readFileSync(input, { encoding: 'utf8' });
+        sttime = new Date();
+
+        fs.writeFileSync(output, expressiv(source));
+
+        return console.log("Wrote '%s' in %d ms", output, new Date() - sttime);
+    });
+}
+
+cli();

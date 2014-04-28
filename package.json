@@ -13,5 +13,11 @@
     "parser",
     "expressive",
     "markdown"
-  ]
+  ],
+  "bin": {
+    "expressiv": "bin/expressiv"
+  },
+  "dependencies": {
+    "minimist": "0.0.8"
+  }
 }
