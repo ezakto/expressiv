@@ -1,6 +1,6 @@
 {
   "name": "expressiv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Nicolás Arias",
   "description": "A markdown-like language / parser",
   "main": "index.js",
