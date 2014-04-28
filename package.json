@@ -1,0 +1,17 @@
+{
+  "name": "expressive",
+  "version": "0.1.0",
+  "author": "Nicolás Arias",
+  "description": "A markdown-like language / parser",
+  "main": "index.js",
+  "repository": "https://github.com/ezakto/expressiv",
+  "keywords": [
+    "markup",
+    "language",
+    "plain",
+    "text",
+    "parser",
+    "expressive",
+    "markdown"
+  ]
+}
