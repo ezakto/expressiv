@@ -13,8 +13,10 @@ tests.forEach(function(file){
     var test     = path.basename(file, '.x'), expected, result;
     
     try {
-        expected = fs.readFileSync(path.join(__dirname, 'tests', test + '.html'), { encoding: 'utf8' }).replace(/\s+/g, '');
-        result = expressiv(fs.readFileSync(path.join(__dirname, 'tests', file), { encoding: 'utf8' })).replace(/\s+/g, '');
+        expected = fs.readFileSync(path.join(__dirname, 'tests', test + '.html'), { encoding: 'utf8' })
+            .replace(/^\s+|\s+$/gm, '').replace(/\n+/g, '');
+        result = expressiv(fs.readFileSync(path.join(__dirname, 'tests', file), { encoding: 'utf8' }))
+            .replace(/^\s+|\s+$/gm, '').replace(/\n+/g, '');
         if (result !== expected) throw new Error();
         console.log('\u2713', "Test", test);
         p++;
