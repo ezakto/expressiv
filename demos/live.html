@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expressiv editor</title>
+    <style>
+        #input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            border: 0;
+        }
+        #output {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            border-left: 1px solid #000;
+        }
+        #toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="input"></textarea>
+    <div id="output"></div>
+    <a id="toggle">Toggle input</a>
+    <script src="../lib/expressiv.js"></script>
+    <script>
+        var html = true;
+        var input = document.getElementById('input');
+        var output = document.getElementById('output');
+        var toggle = document.getElementById('toggle');
+        input.addEventListener('keyup', parse, false);
+        toggle.addEventListener('click', function(){html=!html;parse();return false}, false);
+        parse();
+        function parse() {
+            var code = Expressiv(input.value);
+            html || (code = code.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n+/g, '<br>'));
+            output.innerHTML = code;
+        }
+    </script>
+</body>
+</html>
