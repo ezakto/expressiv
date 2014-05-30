@@ -1,0 +1,32 @@
+{
+  "name": "Expressiv",
+  "main": "lib/expressiv.js",
+  "version": "0.1.1",
+  "homepage": "https://github.com/ezakto/expressiv",
+  "authors": [
+    "Nicolás Arias <nicolas@nicolasarias.com>"
+  ],
+  "description": "Markdown-like language / parser",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "markup",
+    "language",
+    "plain",
+    "text",
+    "parser",
+    "expressive",
+    "markdown"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
