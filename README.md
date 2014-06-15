@@ -12,7 +12,7 @@ Special characters can be escaped with \
 Lorem *ipsum\* dolor* **sit** amet _consectetur_ adipsicing elit.
 ```
 
-```
+```html
 Lorem <em>ipsum* dolor</em> <strong>sit</strong> amet <u>consectetur</u> adipsicing elit.
 ```
 
@@ -22,7 +22,7 @@ Lorem <em>ipsum* dolor</em> <strong>sit</strong> amet <u>consectetur</u> adipsic
 Lorem ->ipsum (http://www.example.com) dolor sit amet consectetur@adipsicing.elit.
 ```
 
-```
+```html
 Lorem <a href="http://www.example.com">ipsum</a> dolor sit amet <a href="mailto:consectetur@adipsicing.elit">consectetur@adipsicing.elit</a>.
 ```
 
@@ -32,7 +32,7 @@ Lorem <a href="http://www.example.com">ipsum</a> dolor sit amet <a href="mailto:
 Lorem [[http://www.example.com/mypic.gif]] dolor sit amet [[My picture|http://www.example.com/mypic.gif]] consectetur adipsicing elit.
 ```
 
-```
+```html
 Lorem <img src="http://www.example.com/mypic.gif" alt=""> dolor sit amet <img src="http://www.example.com/mypic.gif" alt="My picture" title="My picture"> consectetur adipsicing elit.
 ```
 
@@ -42,7 +42,7 @@ Lorem <img src="http://www.example.com/mypic.gif" alt=""> dolor sit amet <img sr
 Lorem @ipsum dolor sit amet #consectetur adipsicing elit.
 ```
 
-```
+```html
 Lorem <a href="http://twitter.com/ipsum">@ipsum</a> dolor sit amet <a href="http://twitter.com/search?q=%23consectetur&src=hash">#consectetur</a> adipsicing elit.
 ```
 
@@ -61,7 +61,7 @@ This is another one.
 
 Turns into:
 
-```
+```html
 <p>
     Hello there.<br>
     This is a paragraph.
@@ -81,7 +81,7 @@ Somebody said this.
 "
 ```
 
-```
+```html
 <blockquote>
     Somebody said this.
 </blockquote>
@@ -99,7 +99,7 @@ Start and end with `@`
 @
 ```
 
-```
+```html
 <pre><?php
     echo 'Hello world';
 ?></pre>
@@ -113,7 +113,7 @@ Go from # (h2) to ##### (h6):
 ## Section title
 ```
 
-```
+```html
 <h3>Section title</h3>
 ```
 
@@ -124,7 +124,7 @@ Document heading
 ================
 ```
 
-```
+```html
 <header>
     <h1>Document heading</h1>
 </header>
@@ -138,7 +138,7 @@ Document heading
 Subheading here
 ```
 
-```
+```html
 <header>
     <h1>Document heading</h1>
     <strong>Subheading here</strong>
@@ -157,7 +157,7 @@ Subheading here
 3. Item 3
 ```
 
-```
+```html
 <ul>
     <li>Item 1</li>
     <li>Item 2</li>
@@ -183,7 +183,7 @@ List items can also contain entire blocks:
 * Another item
 ```
 
-```
+```html
 <ul>
     <li>List item</li>
     <li>
@@ -217,7 +217,7 @@ Term 3:
     Moar.
 ```
 
-```
+```html
 <dl>
     <dt>Term 1:</dt>
     <dd>Definition here.</dd>
@@ -245,7 +245,7 @@ Tables are wrapped by pipes ("|"). Heading row is divided by "="s and colspans c
 |This is another row ||With another cell with colspan=2   |
 ```
 
-```
+```html
 <table>
     <tr>
         <th colspan="3">This is the heading row, with colspan=3  </th>
@@ -269,7 +269,7 @@ Cell text alignment can be specified via ascii-art-alignment:
 ||       center aligned cell with colspan=2       |
 ```
 
-```
+```html
 <table>
     <tr>
         <td>Simple table cell</td>
