@@ -9,7 +9,7 @@ The most basic inline tokens are very similar to their markdown counterparts, wi
 Special characters can be escaped with \
 
 ```
-Lorem *ipsum\\\* dolor* **sit** amet _consectetur_ adipsicing elit.
+Lorem *ipsum\* dolor* **sit** amet _consectetur_ adipsicing elit.
 ```
 
 ```
